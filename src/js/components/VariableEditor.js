@@ -274,6 +274,9 @@ class VariableEditor extends React.PureComponent {
                             }
                         });
                     }}
+                    onMouseUp={() => {
+                        this.onMouseUp();
+                    }}
                     onKeyDown={e => {
                         switch (e.key) {
                             case 'Escape': {
@@ -315,6 +318,15 @@ class VariableEditor extends React.PureComponent {
                 </div>
             </div>
         );
+    };
+
+    onMouseUp = () => {
+        const { rjvId } = this.props;
+        dispatcher.dispatch({
+            name: 'MOUSE_UP',
+            rjvId: rjvId,
+            data: {}
+        });
     };
 
     submitEdit = submit_detected => {

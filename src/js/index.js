@@ -52,6 +52,7 @@ class ReactJsonView extends React.PureComponent {
         onDelete: false,
         onAdd: false,
         onSelect: false,
+        onMouseUp: false,
         iconStyle: 'triangle',
         style: {},
         validationMessage: 'Validation Error',
@@ -124,6 +125,7 @@ class ReactJsonView extends React.PureComponent {
         return {
             reset: this.resetState,
             'variable-update': this.updateSrc,
+            'mouse-up': this.mouseUp,
             'add-key-request': this.addKeyRequest
         };
     };
@@ -197,6 +199,11 @@ class ReactJsonView extends React.PureComponent {
                 />
             </div>
         );
+    }
+
+    mouseUp = () => {
+        const { onMouseUp } = this.props;
+        onMouseUp();
     }
 
     updateSrc = () => {

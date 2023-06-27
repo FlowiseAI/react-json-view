@@ -123,6 +123,12 @@ export interface ReactJsonViewProps {
    * Default: false
    */
   onSelect?: ((select: OnSelectProps) => void) | false;
+    /**
+   * When a function is passed in, clicking a value triggers the onSelect method to be called.
+   *
+   * Default: false
+   */
+  onMouseUp?: (() => void) | false;
   /**
    * Custom message for validation failures to onEdit, onAdd, or onDelete callbacks.
    *

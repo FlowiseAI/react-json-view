@@ -30,6 +30,9 @@ class ObjectAttributes extends EventEmitter {
     handleAction = action => {
         const { rjvId, data, name } = action;
         switch (name) {
+            case 'MOUSE_UP':
+                this.emit('mouse-up-' + rjvId);
+                break;
             case 'RESET':
                 this.emit('reset-' + rjvId);
                 break;

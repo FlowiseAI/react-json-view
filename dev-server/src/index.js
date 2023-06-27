@@ -19,6 +19,9 @@ ReactDom.render(
             src={getExampleJson1()}
             quotesOnKeys={false}
             collapseStringsAfterLength={12}
+            onMouseUp={() => {
+                console.log('onMouseUp');
+            }}
             onEdit={e => {
                 console.log('edit callback', e);
                 if (e.new_value == 'error') {
