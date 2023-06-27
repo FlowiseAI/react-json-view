@@ -31,6 +31,10 @@ class ObjectAttributes extends EventEmitter {
         const { rjvId, data, name } = action;
         switch (name) {
             case 'MOUSE_UP':
+                this.set(rjvId, 'action', 'mouse-up', {
+                    event: data,
+                    type: 'mouse-up'
+                });
                 this.emit('mouse-up-' + rjvId);
                 break;
             case 'RESET':
@@ -68,13 +72,8 @@ class ObjectAttributes extends EventEmitter {
     };
 
     updateSrc = (rjvId, request) => {
-        let {
-            name,
-            namespace,
-            new_value,
-            existing_value,
-            variable_removed
-        } = request;
+        let { name, namespace, new_value, existing_value, variable_removed } =
+            request;
 
         namespace.shift();
 

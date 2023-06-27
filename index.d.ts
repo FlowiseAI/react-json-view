@@ -128,7 +128,7 @@ export interface ReactJsonViewProps {
    *
    * Default: false
    */
-  onMouseUp?: (() => void) | false;
+  onMouseUp?: ((event: any) => void) | false;
   /**
    * Custom message for validation failures to onEdit, onAdd, or onDelete callbacks.
    *

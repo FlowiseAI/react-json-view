@@ -19,8 +19,8 @@ ReactDom.render(
             src={getExampleJson1()}
             quotesOnKeys={false}
             collapseStringsAfterLength={12}
-            onMouseUp={() => {
-                console.log('onMouseUp');
+            onMouseUp={event => {
+                console.log('onMouseUp event=', event.currentTarget);
             }}
             onEdit={e => {
                 console.log('edit callback', e);

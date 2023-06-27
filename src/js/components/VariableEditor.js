@@ -274,8 +274,8 @@ class VariableEditor extends React.PureComponent {
                             }
                         });
                     }}
-                    onMouseUp={() => {
-                        this.onMouseUp();
+                    onMouseUp={event => {
+                        this.onMouseUp(event);
                     }}
                     onKeyDown={e => {
                         switch (e.key) {
@@ -320,12 +320,12 @@ class VariableEditor extends React.PureComponent {
         );
     };
 
-    onMouseUp = () => {
+    onMouseUp = event => {
         const { rjvId } = this.props;
         dispatcher.dispatch({
             name: 'MOUSE_UP',
             rjvId: rjvId,
-            data: {}
+            data: event
         });
     };
 

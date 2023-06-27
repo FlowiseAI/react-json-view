@@ -202,9 +202,18 @@ class ReactJsonView extends React.PureComponent {
     }
 
     mouseUp = () => {
+        const { event, type } = ObjectAttributes.get(
+            this.rjvId,
+            'action',
+            'mouse-up'
+        );
         const { onMouseUp } = this.props;
-        onMouseUp();
-    }
+        switch (type) {
+            case 'mouse-up':
+                onMouseUp(event);
+                break;
+        }
+    };
 
     updateSrc = () => {
         const {
