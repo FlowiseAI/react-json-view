@@ -20,7 +20,15 @@ ReactDom.render(
             quotesOnKeys={false}
             collapseStringsAfterLength={12}
             onMouseUp={event => {
-                console.log('onMouseUp event=', event.currentTarget);
+                console.log('onMouseUp event name=', event.name);
+                console.log(
+                    'onMouseUp event existing_value=',
+                    event.existing_value
+                );
+                console.log(
+                    'onMouseUp event currentTarget=',
+                    event.currentTarget
+                );
             }}
             onEdit={e => {
                 console.log('edit callback', e);

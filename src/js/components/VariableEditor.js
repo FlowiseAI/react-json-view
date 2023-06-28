@@ -321,11 +321,15 @@ class VariableEditor extends React.PureComponent {
     };
 
     onMouseUp = event => {
-        const { rjvId } = this.props;
+        const { variable, rjvId } = this.props;
         dispatcher.dispatch({
             name: 'MOUSE_UP',
             rjvId: rjvId,
-            data: event
+            data: {
+                ...event,
+                name: variable.name,
+                existing_value: variable.value
+            }
         });
     };
 
